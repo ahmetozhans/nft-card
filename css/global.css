@@ -54,44 +54,37 @@ body{
     position: relative;
 }
 
-.image {
-    display: block;
-    width: 100%;
-    height: auto;
+image{
     border-radius: 8px;
-  }
-  
-  .overlay {
+    overflow: hidden;
+    position: relative;
+}
+.image img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+.img-overlay{
     position: absolute;
-    top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    top: 0;
     height: 100%;
     width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: hsl(178, 100%, 50%);
-    border-radius: 8px;
-  }
-  
-  .container:hover .overlay {
-      opacity: 0.7;
-    }
+    background-color: hsl(178, 100%, 50%, 0.5);
+    display: none;
+}
 
-  
-  .text {
-    color: white;
-    font-size: 20px;
+.image:hover .img-overlay{
+    display: block;
+}
+
+.img-overlay img{
     position: absolute;
-    top: 50%;
+    width: 50px;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+    top: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
+}
 
 
 .card-body p{
