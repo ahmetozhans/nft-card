@@ -1,42 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/global.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <title>Frontend Mentor | NFT preview card component</title>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel='stylesheet' href='./src/js/video/plyr.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <!-- Link Swiper's CSS -->
+    <title>Evita</title>
 </head>
 <body>
 
-  <div class="container">
-    <main>
-      <div class="content">
-        <div class="content-image">
-          <div class="image"><img src="./images/image-equilibrium.jpg" alt="">
-          <div class="img-overlay"><img src="./images/icon-view.svg" alt=""></div>
-          </div>
+    <header class="container-fluid">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo"><img src="./src/img/logo.svg" alt="logo"></div>
+                <!-- desktop menu -->
+                <nav id="desktop-menu">
+                    <a href="#">keşfet</a>
+                    <div class="dropdown">
+                        <a href="#">HİZMETLER</a>
+                        <div class="dropdown-content">
+                          <a href="#">TeleSağlık</a>
+                          <a href="#">Kronik Takip</a>
+                          <a href="#">TeleVet</a>
+                          <a href="#">Evde Sağlık</a>
+                          <a href="#">Giyilebilir Teknolojiler</a>
+                          <a href="#">Yakından Sağlık Planları</a>
+                          <a href="#">Yakından Sağlık Hattı</a>
+                        </div>
+                    </div> 
+                    <div class="dropdown">
+                        <a href="#">Planlar</a>
+                        <div class="dropdown-content">
+                          <a href="#">Kapsamlı Sağlık Planları</a>
+                          <a href="#">TeleSağlık</a>
+                          <a href="#">EvdeSağlık</a>
+                        </div>
+                    </div> 
+                    <a href="#">Blog</a>
+                </nav>
+                <!-- Mobile Menu -->
+                         <!-- open close hamburger icon ana div ham -->
+        <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+            <path
+                  class="line top"
+                  d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+            <path
+                  class="line middle"
+                  d="m 30,50 h 40" />
+            <path
+                  class="line bottom"
+                  d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+          </svg>
+                <!-- mobile menu end -->
+                <div class="navbar-login">
+                    <button class="header-button">GİRİŞ YAP</button>
+                    <button class="header-button-bg">Üye Ol</button>
+                    <button class="header-button-lang">En</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-2">
+
+
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-orange">
+                        <div class="img-overlay color-orange-img">
+                            <img src="./src/img/hero-orange.jpg" alt="">
+                            <div class="card-text">Bağlan...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-title">
+                        <h1>Evita Yakından Sağlık Sistemi ile <br><span class="color-orange"> #HayatınızaSağlık</span> </h1>
+                        <h4>Sağlığınızla ilgili tüm bilgi, hizmet ve çözümlere anında bağlanmak için Evita Yakından Sağlık uygulamasını indirin.</h4>
+                    </div>
+                    <div class="card-app">
+                        <div class="card-item">
+                            <button class="hero-button-opacity" data-hover="İNDİR"><div class="app-button" >Apple Store’dan Yükle</div></button>
+                            <span class="hero-body-qr"><img src="./src/img/qr-code.svg" alt=""></span>
+                        </div>
+                        <div class="card-item">
+                            <button class="hero-button-opacity" data-hover="İNDİR"><div class="app-button" >Google Play’den Yükle</div></button>
+                            <span class="hero-body-qr"><img src="./src/img/qr-code.svg" alt=""></span>
+                        </div>
+                        <div class="card-item">
+                            <button class="hero-button-opacity" data-hover="Hemen Ara"><div class="app-button" >Yakından Sağlık Hattı</div></button>
+                            <form action="tel:+904441444" method="get" target="_blank">
+                                <button type="submit" class="button-tel">444 1 707</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-blue">
+                        <div class="img-overlay color-blue-img">
+                            <img src="./src/img/miguel-a-amutio-SgZVtmdxlc0-unsplash.jpg" alt="">
+                            <div class="card-text">Keşfet...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-title">
+                        <h4>Profilinizi oluşturup planınızı seçin. 7/24 uzmanlardan randevu alın,
+                            verilerinizi takip edin, doktor hemşire hizmeti alın, sağlığınızla ilgili tüm gelişmeleri keşfedin.
+                        </h4>
+                    </div>
+                    <div class="card-app-2 ">
+                        <div class="card-video-body ">
+                            <div class="card-video-title"><h4>Evita Nedir?</h4></div>
+                            <div class="card-video-video">
+                                <video controls crossorigin playsinline
+                                    poster="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80">
+                                    <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+                                        type="video/mp4" size="576">
+        
+                                    <!-- Caption files -->
+                                    <!-- Fallback for browsers that don't support the <video> element -->
+                                    <a>Video Oynatılamıyor</a>
+                                </video>
+                            </div>
+                        </div>
+                        <div class="card-video-body ">
+                            <div class="card-video-title"><h4>Evita Nedir?</h4></div>
+                            <div class="card-video-video">
+                                <video controls crossorigin playsinline
+                                    poster="https://images.unsplash.com/photo-1470116945706-e6bf5d5a53ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80">
+                                    <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+                                        type="video/mp4" size="576">
+        
+                                    <!-- Caption files -->
+                                    <!-- Fallback for browsers that don't support the <video> element -->
+                                    <a>Video Oynatılamıyor</a>
+                                </video>
+                            </div>
+                        </div>
+                        <div class="card-video-body ">
+                            <div class="card-video-title"><h4>Evita Nedir?</h4></div>
+                            <div class="card-video-video">
+                                <video controls crossorigin playsinline
+                                    poster="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+                                    <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+                                        type="video/mp4" size="576">
+        
+                                    <!-- Caption files -->
+                                    <!-- Fallback for browsers that don't support the <video> element -->
+                                    <a>Video Oynatılamıyor</a>
+                                </video>
+                            </div>
+                        </div>
+        
+        
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-turkuaz">
+                        <div class="img-overlay color-green-img">
+                            <img src="./src/img/hero-orange.jpg" alt="">
+                            <div class="card-text">İyileş...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-title">
+                        <h4>Sağlığınızla ilgili tüm hizmetlere tek bir bağlantıdan ulaşarak kendinizin ve sevdiklerinizin yaşam kalitesini iyileştirin.</h4>
+                    </div>
+                    <div class="card-app">
+        
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>TeleSağlık</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Günün her saati doktora, hemşireye anında bağlanarak sorularınızı zaman kaybetmeden çözüme
+                                    ulaştırın.</p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Kronik
+                                    Takip</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>I usually tell most people to start by learning HTML and CSS, then move into learning
+                                    JavaScript. The reason is that JavaScript is used everywhere: frontend, backend, and even to
+                                    build mobile apps. It has many use cases, which is why I think it’s smart to learn.</p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>TeleVet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>If you have an interest in coding and graphic design, then there’s nothing to say you
+                                    shouldn’t learn skills in both areas. They often work hand-in-hand, so having knowledge and
+                                    skills in both areas could be desirable for certain career paths. You could also think about
+                                </p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Evde
+                                    Sağlık</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Now, in 2020, it’s a no-brainer: Python 3 is definitely the way to go. There are still some
+                                    situations where picking up Python 2 might be advantageous, or you may just want to learn a
+                                    little of the history and the differences between Python 2 and 3 for curiosity’s sake, but
+                                    job-wise, Python 3 is the clear winner.</p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Giyilebilir
+                                    Teknolojiler</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow
+                                    you down. Here are a few ideas of things you can choose to focus on, and a little bit about
+                                    each one.</p>
+                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Yakından Sağlık
+                                    Planları</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow
+                                    you down. Here are a few ideas of things you can choose to focus on, and a little bit about
+                                    each one.</p>
+                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Acil
+                                    Hizmetler</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow
+                                    you down. Here are a few ideas of things you can choose to focus on, and a little bit about
+                                    each one.</p>
+                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>7/24 Doktor
+                                    Hattı</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow
+                                    you down. Here are a few ideas of things you can choose to focus on, and a little bit about
+                                    each one.</p>
+                            </div>
+                        </div>
+        
+        
+                    </div>
+        
+        
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-gray">
+                        <div class="img-overlay">
+                            <img src="./src/img/hero-orange.jpg" alt="">
+                            <div class="card-text">Dilediğin Planı Seç</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-title">
+                        <h4>Kendinize, ailenize, kronik rahatsızlıklarınıza ve ihtiyaçlarınıza göre en uygun sağlık planını seçin.</h4>
+                    </div>
+                    <div class="card-app">
+        
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Kapsamlı Sağlık Planları</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Doktor, hemşire, ilaç, hasta ve yaşlı bakımı gibi tüm sağlık hizmetlerini ayağınıza getirmek için ihtiyaç duyduğunuz sağlık planını seçin.</p>
+                                <div class="plan">
+                                    <h5>Standart</h5>
+                                    <ul>
+                                        <li>Madde1</li>
+                                        <li>Madde2</li>
+                                        <li>Madde3</li>
+                                        <li>Madde4</li>
+                                        <li>Madde5</li>
+                                    </ul>
+                                </div> 
+                                <div class="plan">
+                                    <h5>Premium</h5>
+                                    <ul>
+                                        <li>Madde1</li>
+                                        <li>Madde2</li>
+                                        <li>Madde3</li>
+                                        <li>Madde4</li>
+                                        <li>Madde5</li>
+                                    </ul>
+                                </div> 
+                                <div class="plan">
+                                    <h5>VIP</h5>
+                                    <ul>
+                                        <li>Madde1</li>
+                                        <li>Madde2</li>
+                                        <li>Madde3</li>
+                                        <li>Madde4</li>
+                                        <li>Madde5</li>
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>TeleSağlık</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>I usually tell most people to start by learning HTML and CSS, then move into learning
+                                    JavaScript. The reason is that JavaScript is used everywhere: frontend, backend, and even to
+                                    build mobile apps. It has many use cases, which is why I think it’s smart to learn.</p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>EvdeSağlık</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>If you have an interest in coding and graphic design, then there’s nothing to say you
+                                    shouldn’t learn skills in both areas. They often work hand-in-hand, so having knowledge and
+                                    skills in both areas could be desirable for certain career paths. You could also think about
+                                    pursuing something in between like UI design, which is a very in-demand career right now!
+                                    <br><br>
+                                    In general, having design skills along with coding skills is helpful. But it’s also okay to
+                                    do one over the other. My advice would be to just get started! You can always change
+                                    directions later… as long as you’re changing directions to the final destination you’re
+                                    looking for!
+                                </p>
+                            </div>
+                        </div>
+        
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+        
+                                <span class="accordion__caption"><i class="color-turkuaz far fa-lightbulb"></i>Kurumsal Sağlık Planıları</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+        
+                            <div class="accordion__content">
+                                <p>Now, in 2020, it’s a no-brainer: Python 3 is definitely the way to go. There are still some
+                                    situations where picking up Python 2 might be advantageous, or you may just want to learn a
+                                    little of the history and the differences between Python 2 and 3 for curiosity’s sake, but
+                                    job-wise, Python 3 is the clear winner.</p>
+                            </div>
+                        </div>
+        
+        
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-gray">
+                        <div class="img-overlay">
+                            <img src="./src/img/hero-orange.jpg" alt="">
+                            <div class="card-text">Giyilebilir Teknolojilerle Tanış</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-app">
+                        <div class="card-box-border">
+                            <div class="card-title"><h4>Sağlığınızla ilgili tüm bilgi, hizmet ve çözümlere anında bağlanmak için Evita Yakından Sağlık uygulamasını indirin.</h4></div>
+                            <div class="card-box-img"><img src="./src/img/Asset 1.svg" alt=""></div>
+                        </div>
+                        <div class="card-box-border display-flex display-flex-space align-items-c">
+                            <h4>Tüm Cihazlar</h4>
+                            <button class="card-box-button">Keşfet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-gray">
+                        <div class="img-overlay">
+                            <img src="./src/img/hero-orange.jpg" alt="">
+                            <div class="card-text">Sağlığın Hakkında Bilgilen</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-right">
+                    <div class="card-app">
+                        <div class="card-box-border">
+                            <div class="card-title"><h4>Yaşam kalitenizi artıracak bilgi ve öneriler için <br>Hayatınıza Sağlık köşesini takip edin.</h4></div>
+                            
+                            <div class="swiper mySwiper card-box-body-slider">
+
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide card-box-slider"><h2>Okul Döneminde Çocukları Hastalıklardan Korumak için Alacağınız 5 Önlem.</h2>
+                                        <span><a href="#">Devamını Oku</a></span>
+                                    </div>
+
+                                    <div class="swiper-slide card-box-slider"><h2>Okul Döneminde Çocukları Hastalıklardan Korumak için Alacağınız 5 Önlem.</h2>
+                                        <span><a href="#">Devamını Oku</a></span>
+                                    </div>
+                                
+                                    <div class="swiper-slide card-box-slider"><h2>Okul Döneminde Çocukları Hastalıklardan Korumak için Alacağınız 5 Önlem.</h2>
+                                        <span><a href="#">Devamını Oku</a></span>
+                                    </div>
+                              
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hero" class="scrollFade">
+            <div class="card-body">
+                <div class="card-left">
+                    <div class="img-border border-color-gray">
+                        <div class="img-overlay">
+                            <img src="./src/img/hero-orange.jpg" alt="">
+                            <div class="card-text">Evita’ya Güven</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-app">
+                        <div class="card-box-border">
+                            <div class="card-title"><h4>Dünyanın önde gelen bağımsız sağlık kurumları ve resmi kuruluşlar tarafından onaylanan Evita’yı tercih edin.</h4></div>
+                            <div class="card-box-img"><img src="./src/img/iso.png" alt="iso belgesi"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+        <div class="container-fluid-2">
+            <div class="container">
+                <section id="brand" class="scrollFade">
+                    <div class="brand-text">
+                        <h2>Evita’ya Güvenler</h2>
+                        <h3>Türkiye’nin önde gelen sağlık kuruluşlarının ve kurumsal şirketlerin tercihi, Evita Yakından Sağlık
+                            Sistemi.</h3>
+                    </div>
+                    <div class="brand-body">
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                        <div class="brand-item"><img src="./src/img/Amerikan_Hastanesi_Logo.png" alt="brand"></div>
+                    </div>
+            
+                </section>
+            </div>
+        </div>
+
+
+    <footer class="container-fluid-3">
+        <div class="container">
+            <div class="footer-body">
+                <div class="footer-head">
+                    <div class="footer-left">
+                        <div class="footer-menu">
+                            <h5 class="footer-title">Evita</h5>
+                            <ul>
+                                <a href="#">Evita Hakkında</a>
+                                <a href="#">Kariyer</a>
+                                <a href="#">Kurumsal İş Birliği</a>
+                                <a href="#">İletişim</a>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <h5 class="footer-title">Yasal</h5>
+                            <ul>
+                                <a href="#">Kullanım Hüküm ve Koşulları</a>
+                                <a href="#">Kişisel Verilerin Korunması</a>
+                                <a href="#">Çerez Politikaları</a>
+                                <a href="#">Sıkça Sorulan Sorular</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-app">
+                            <h5 class="footer-title">BİZE ULAŞIN</h5>
+                            <button class="footer-app-buton">App Store’dan Yükle <div class="icon-app"><img src="./src/img/app-store.svg" alt=""></div></button>
+                            <button class="footer-app-buton">Google Play’den Yükle<div class="icon-app"><img src="./src/img/google-play.svg" alt=""></div></button>
+                            <button class="footer-app-buton">444 1 444<div class="icon-app"><img src="./src/img/phone.svg" alt=""></div></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-copyright"><p>Copyright © 2022 EVITA</p></div>
+                    <div class="footer-social">
+                        <div class="footer-social-item"><a href="#instagram"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0036 7.7956C11.4632 7.7956 7.801 11.4587 7.801 16C7.801 20.5413 11.4632 24.2044 16.0036 24.2044C20.5439 24.2044 24.2061 20.5413 24.2061 16C24.2061 11.4587 20.5439 7.7956 16.0036 7.7956ZM16.0036 21.3339C13.0695 21.3339 10.6708 18.9419 10.6708 16C10.6708 13.0581 13.0624 10.6661 16.0036 10.6661C18.9448 10.6661 21.3363 13.0581 21.3363 16C21.3363 18.9419 18.9376 21.3339 16.0036 21.3339V21.3339ZM26.4549 7.46C26.4549 8.52393 25.5982 9.37365 24.5417 9.37365C23.478 9.37365 22.6284 8.51679 22.6284 7.46C22.6284 6.40321 23.4851 5.54636 24.5417 5.54636C25.5982 5.54636 26.4549 6.40321 26.4549 7.46ZM31.8876 9.40221C31.7662 6.83878 31.1808 4.56811 29.3033 2.69731C27.4329 0.826509 25.1627 0.240991 22.5999 0.112462C19.9585 -0.0374874 12.0415 -0.0374874 9.40011 0.112462C6.8444 0.23385 4.57423 0.819368 2.69671 2.69017C0.819186 4.56097 0.240937 6.83164 0.112437 9.39507C-0.0374791 12.037 -0.0374791 19.9558 0.112437 22.5978C0.233798 25.1612 0.819186 27.4319 2.69671 29.3027C4.57423 31.1735 6.83726 31.759 9.40011 31.8875C12.0415 32.0375 19.9585 32.0375 22.5999 31.8875C25.1627 31.7661 27.4329 31.1806 29.3033 29.3027C31.1737 27.4319 31.7591 25.1612 31.8876 22.5978C32.0375 19.9558 32.0375 12.0442 31.8876 9.40221V9.40221ZM28.4752 25.4326C27.9184 26.8321 26.8404 27.9103 25.434 28.4744C23.3281 29.3098 18.3308 29.117 16.0036 29.117C13.6763 29.117 8.67195 29.3027 6.57312 28.4744C5.1739 27.9174 4.09593 26.8392 3.53196 25.4326C2.69671 23.3261 2.88946 18.3278 2.88946 16C2.88946 13.6722 2.70385 8.66674 3.53196 6.56744C4.08879 5.16791 5.16676 4.0897 6.57312 3.52561C8.67909 2.69017 13.6763 2.88296 16.0036 2.88296C18.3308 2.88296 23.3352 2.69731 25.434 3.52561C26.8332 4.08256 27.9112 5.16077 28.4752 6.56744C29.3104 8.67388 29.1177 13.6722 29.1177 16C29.1177 18.3278 29.3104 23.3333 28.4752 25.4326Z" fill="white"/>
+                            </svg>
+                            </a></div>
+
+                        <div class="footer-social-item"><a href="#twitter"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.7107 7.97497C28.7311 8.32495 28.7311 8.67501 28.7311 9.025C28.7311 19.6999 22.1321 32 10.0711 32C6.35534 32 2.90357 30.6749 0 28.375C0.52794 28.45 1.0355 28.475 1.58376 28.475C4.64971 28.475 7.47209 27.2 9.72591 25.025C6.84265 24.95 4.42639 22.625 3.59389 19.425C4.00002 19.4999 4.40608 19.55 4.83252 19.55C5.42133 19.55 6.01021 19.4499 6.5584 19.275C3.55333 18.5249 1.29944 15.275 1.29944 11.35V11.25C2.17251 11.85 3.18783 12.225 4.26389 12.275C2.49738 10.8249 1.34007 8.34996 1.34007 5.54994C1.34007 4.04997 1.66488 2.67497 2.23345 1.47496C5.4619 6.37496 10.3147 9.5749 15.7563 9.92497C15.6548 9.32496 15.5939 8.70002 15.5939 8.07501C15.5939 3.62496 18.5178 0 22.1523 0C24.0406 0 25.7462 0.974998 26.9442 2.55C28.4264 2.20002 29.8477 1.52498 31.1066 0.600004C30.6192 2.47505 29.5837 4.05005 28.2234 5.04998C29.5432 4.87506 30.8224 4.42496 32 3.80003C31.1067 5.39996 29.9899 6.8249 28.7107 7.97497V7.97497Z" fill="white"/>
+                            </svg>
+                            </a></div>
+
+                        <div class="footer-social-item"><a href="#youtube"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.3313 5.00692C30.9633 3.03608 29.879 1.48392 28.5022 0.957167C26.0067 0 16 0 16 0C16 0 5.99337 0 3.49781 0.957167C2.12103 1.484 1.0367 3.03608 0.668671 5.00692C0 8.57917 0 16.0323 0 16.0323C0 16.0323 0 23.4855 0.668671 27.0578C1.0367 29.0286 2.12103 30.5161 3.49781 31.0428C5.99337 32 16 32 16 32C16 32 26.0066 32 28.5022 31.0428C29.879 30.5161 30.9633 29.0286 31.3313 27.0578C32 23.4855 32 16.0323 32 16.0323C32 16.0323 32 8.57917 31.3313 5.00692V5.00692ZM12.7272 22.7993V9.26542L21.0909 16.0325L12.7272 22.7993V22.7993Z" fill="white"/>
+                            </svg>
+                            </a></div>
+
+                        <div class="footer-social-item"><a href="#linkedin"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.7143 0H2.27857C1.02143 0 0 1.03571 0 2.30714V29.6929C0 30.9643 1.02143 32 2.27857 32H29.7143C30.9714 32 32 30.9643 32 29.6929V2.30714C32 1.03571 30.9714 0 29.7143 0ZM9.67143 27.4286H4.92857V12.1571H9.67857V27.4286H9.67143ZM7.3 10.0714C5.77857 10.0714 4.55 8.83571 4.55 7.32143C4.55 5.80714 5.77857 4.57143 7.3 4.57143C8.81429 4.57143 10.05 5.80714 10.05 7.32143C10.05 8.84286 8.82143 10.0714 7.3 10.0714V10.0714ZM27.45 27.4286H22.7071V20C22.7071 18.2286 22.6714 15.95 20.2429 15.95C17.7714 15.95 17.3929 17.8786 17.3929 19.8714V27.4286H12.65V12.1571H17.2V14.2429H17.2643C17.9 13.0429 19.45 11.7786 21.7571 11.7786C26.5571 11.7786 27.45 14.9429 27.45 19.0571V27.4286V27.4286Z" fill="white"/>
+                            </svg>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
-        <div class="card-body">
-          <a href="#"><h1>Equilibrium #3429</h1></a> 
-          <p>Our Equilibrium collection promotes balance and calm.</p>
-        </div>
-        <div class="card-eth">
-          <div class="eth"><img src="./images/icon-ethereum.svg" alt="">0.041 ETH</div>
-          <div class="days"><img src="./images/icon-clock.svg" alt=""> 3 days left</div>
-        </div>
-        <div class="profile">
-          <div class="profile-img"><img src="./images/image-avatar.png" alt=""></div>
-          <div class="profile-body">Creation of<a href="#">Jules Wyvern</a></div>
-        </div>
-      </div>
-    </main>
-  </div>
+    </footer>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+<script src="./src/js/main.js"></script>
+<script src="src/js/video/polyfill.min.js"></script>
+<script src="src/js/video/plyr.min.js"></script>
+<script src="./src/js/video/video.js"></script>
 </body>
 </html>

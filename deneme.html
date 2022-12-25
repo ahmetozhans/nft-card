@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel='stylesheet' href='./src/js/video/plyr.css'>
+       
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+     <!-- Link Swiper's CSS -->
+    <title>Document</title>
+</head>
+<body>
+
+
+    <style>
+
+.swiper {
+        max-width: 600px;
+        margin: 8px;
+      }
+
+      .swiper-slide {
+
+      }
+
+
+    </style>
+
+<section id="hero" class="scrollFade">
+  <div class="card-body">
+      <div class="card-left">
+          <div class="img-border border-color-gray">
+              <div class="img-overlay">
+                  <img src="./src/img/hero-orange.jpg" alt="">
+                  <div class="card-text">Sağlığın Hakkında Bilgilen</div>
+              </div>
+          </div>
+      </div>
+      <div class="card-right">
+          <div class="card-app">
+              <div class="card-box-border">
+                  <div class="card-title"><h4>Yaşam kalitenizi artıracak bilgi ve öneriler için <br>Hayatınıza Sağlık köşesini takip edin.</h4></div>
+                  
+                  <div class="swiper mySwiper card-box-body-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide card-box-slider">
+                          <h2>Okul Döneminde Çocukları Hastalıklardan Korumak için Alacağınız 5 Önlem.</h2>
+                          <span><a href="#">Devamını Oku</a></span>
+                      </div>
+                      <div class="swiper-slide card-box-slider">
+                          <h2>Okul Döneminde Çocukları Hastalıklardan Korumak için Alacağınız 5 Önlem.</h2>
+                          <span><a href="#">Devamını Oku</a></span>
+                      </div>
+                      <div class="swiper-slide card-box-slider">
+                          <h2>Okul Döneminde Çocukları Hastalıklardan Korumak için Alacağınız 5 Önlem.</h2>
+                          <span><a href="#">Devamını Oku</a></span>
+                      </div>
+                    
+                    </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  </div>
+
+                    <video controls crossorigin playsinlineposter="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"><source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+                    <!-- Caption files -->
+                    <!-- Fallback for browsers that don't support the <video> element -->
+                        <a>Video Oynatılamıyor</a>
+                    </video>
+
+
+
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+
+</body>
+</html>
